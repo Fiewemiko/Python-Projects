@@ -1,0 +1,35 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+#TODO zrób licznik czasowy
+
+nr_indeksu = "login"
+haslo = "haslo"
+kierunek = "Bioinformatyka"
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+#zamist tego wrzuc link do rejestracji
+driver.get(url="https://rejestracja.usos.uw.edu.pl/course.php?rg=0000-2023-OG-UN&group=0000-OG&subject=1200-BIOINF-OG&cdyd=2023Z&course_id=518981&gr_no=1")
+login = driver.find_element(By.XPATH,'//*[@id="casmenu"]/table/tbody/tr/td[2]/a')
+login.click()
+
+username = driver.find_element(By.ID,'username')
+username.send_keys(nr_indeksu)
+password = driver.find_element(By.ID,'password')
+password.send_keys(haslo)
+
+submit = driver.find_element(By.NAME,'submit')
+submit.click()
+
+driver.find_element(By.XPATH,'//*[@id="menu_panel"]/div/div[4]/a').click()
+fraza = driver.find_element(By.NAME,'_pattern')
+fraza.click()
+fraza.send_keys(kierunek)
+
+driver.find_element(By.XPATH,'//*[@id="main_panel"]/span/div/form/table[1]/tbody/tr/td[4]/input').click()
+driver.find_element(By.XPATH,'//*[@id="d_body"]/tr[7]/td[1]/a').click()
+
+koszyk = driver.find_element(By.XPATH,'//*[@id="cart_info"]/table/tbody/tr/td[1]/div/div/table/tbody/tr/td[1]/button')
+koszyk.click()
