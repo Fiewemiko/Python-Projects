@@ -8,8 +8,8 @@ API_STOCK = '05N3LOEWFLCXJ3UR'
 NEWS_API = 'da59bb1bf0974a018e22ef57e709b515'
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
-account_sid = "AC03b8fbfcb269ad584ef39600c94bf7fd"
-auth_token = "3409b73c8ac9b5373aa9add1474fdd4e"
+account_sid = ""
+auth_token = ""
 
 parameteres = {
     'function':'TIME_SERIES_DAILY',
